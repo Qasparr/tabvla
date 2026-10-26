@@ -1,12 +1,12 @@
 # TABVLA — API Reference (v0.1.0)
 
-## `Tabula(report_path)`
+## `Tabvla(report_path)`
 
 The whole public API in one object.
 
 | Method | What it does |
 |---|---|
-| `Tabula(path)` | Ingest a report (`.md` or `.json`). |
+| `Tabvla(path)` | Ingest a report (`.md` or `.json`). |
 | `.chart(kind, labels, values, title, source, out_path)` | Build a chart from real data. `kind`: `bar`, `line`, `scatter`. Returns the `Figure`. |
 | `.figure(image_path, caption, source, data=None)` | Register an existing image. `data=None` only for schematics whose caption says so. |
 | `.build(out_path)` | Run the provenance gate, then assemble the illustrated PDF. Returns `out_path`. |
@@ -54,8 +54,8 @@ Bars are zero-based, always. Reference lines are drawn dashed and labeled.
 ## CLI
 
 ```bash
-python -m tabula.cli build report.md -o illustrated.pdf
-python -m tabula.cli gate report.md
+python -m tabvla.cli build report.md -o illustrated.pdf
+python -m tabvla.cli gate report.md
 ```
 
 `build` auto-charts every fully-numeric table in the report and registers

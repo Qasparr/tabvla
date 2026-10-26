@@ -34,7 +34,7 @@ Therefore:
 
 ## The mechanism
 
-`tabula/provenance.py` — `gate(figures)` — is the doctrine made
+`tabvla/provenance.py` — `gate(figures)` — is the doctrine made
 executable. It is tested (`tests/test_provenance.py`), because a gate
 without tests is a wish.
 

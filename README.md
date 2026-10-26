@@ -16,7 +16,7 @@ receipt.
 
 Humans accept information presented visually more readily than information that
 isn't. That acceptance must be *earned by accuracy*, never spent on decoration.
-Every figure passes the provenance gate (`tabula/provenance.py`) before
+Every figure passes the provenance gate (`tabvla/provenance.py`) before
 anything renders: no source, no caption, or data that doesn't match the drawing
 — the build fails closed. Read the full doctrine in `docs/DOCTRINE.md`.
 
@@ -24,15 +24,15 @@ anything renders: no source, no caption, or data that doesn't match the drawing
 
 ```bash
 pip install matplotlib fpdf2        # the only runtime deps
-python -m tabula.cli build report.md -o illustrated.pdf
+python -m tabvla.cli build report.md -o illustrated.pdf
 ```
 
 Or the Python API:
 
 ```python
-from tabula import Tabula
+from tabvla import Tabvla
 
-t = Tabula("report.md")
+t = Tabvla("report.md")
 t.chart("bar", ["AXONEME", "PISTON"], [77, 93],
         title="Bridge weighings",
         source="PONTIFEX ptk 0.1.0, Latin ordinal",
@@ -47,12 +47,27 @@ t.build("illustrated.pdf")
 
 ## Layout
 
-- `tabula/` — the package: `ingest` (read reports), `figures` (draw charts),
+- `tabvla/` — the package: `ingest` (read reports), `figures` (draw charts),
   `provenance` (the gate), `assemble` (build the PDF), `cli` (command line).
+- `tabula/` — a compatibility shim only: it re-exports `tabvla` so imports
+  written before the rename keep working. Deprecated; no code lives there.
 - `docs/` — `API.md` (reference), `DOCTRINE.md` (visual TRVVTH).
 - `tools/` — builders and utilities (logo builder documents the mark).
 - `assets/` — the logo: a thirteen-spoked data rose, gold on indigo.
 - `tests/` — the gate, tested.
+
+## The name — a provenance note
+
+This tool was issued on 2026-10-13 as TABULA and renamed **TABVLA** on
+2026-10-25 under the Architect's inscriptional orthography directive
+(V for U, VV for W, V stands as V — infrastructure and Latin take the
+classical spelling; ordinary prose is never respelled). The rename covers
+the tool's identity: directory, package, CLI, class (`Tabvla`), and title.
+It does **not** reach backward: documents, editions, and records already
+published under the old spelling keep the spelling they were issued with —
+in this house, dispositions are marked, never vanished. Code written
+against the old name keeps working through the `tabula/` shim (the class
+alias `Tabula = Tabvla` is likewise retained); new work uses `tabvla`.
 
 ## The logo
 

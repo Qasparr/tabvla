@@ -10,7 +10,7 @@
 # approved by the Architect ("Yay"). This script records the prompt as the
 # logo's provenance — a mark, like a figure, should be able to point to
 # where it came from. Re-running it produces a sibling, not the same mark;
-# the canonical logo is assets/tabula-logo.png.
+# the canonical logo is assets/tabvla-logo.png.
 #
 # DOCTRINE: thirteen spokes, one hub — the tridecagram drawn as a radial
 # data chart. Sacred geometry that IS a visualization: the tool's whole
@@ -26,7 +26,7 @@ LOGO_PROMPT = (
     "of sacred geometry and data visualization, precise, iconic, no text"
 )
 
-CANONICAL = "assets/tabula-logo.png"
+CANONICAL = "assets/tabvla-logo.png"
 APPROVED = "2026-10-13 — the Architect's 'Yay'"
 
 if __name__ == "__main__":

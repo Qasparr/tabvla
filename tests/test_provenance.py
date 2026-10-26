@@ -17,8 +17,8 @@ import os
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from tabula.figures import Figure
-from tabula.provenance import gate, ProvenanceError
+from tabvla.figures import Figure
+from tabvla.provenance import gate, ProvenanceError
 
 
 def _fig(**kw):
