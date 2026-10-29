@@ -54,7 +54,10 @@ t.build("illustrated.pdf")
 - `showcase/` — the tablet exercised in full: the Tower Audit of *The Book
   of Lies* carried from report to gated figures by both the CLI and the
   Python API, the gate shown refusing on the record, with the full report
-  in `showcase/SHOWCASE-REPORT.md`.
+  in `showcase/SHOWCASE-REPORT.md`. **Fallback viewing road:**
+  `showcase/tabvla-showcase-standalone.html` — the whole showcase as one
+  standalone HTML file (React inlined, no network calls); if the GitHub
+  view gives any reader trouble, that file opens in any browser as-is.
 - `docs/` — `API.md` (reference), `DOCTRINE.md` (visual TRVVTH).
 - `tools/` — builders and utilities (logo builder documents the mark).
 - `assets/` — the logo: a thirteen-spoked data rose, gold on indigo.
