@@ -51,6 +51,10 @@ t.build("illustrated.pdf")
   `provenance` (the gate), `assemble` (build the PDF), `cli` (command line).
 - `tabula/` — a compatibility shim only: it re-exports `tabvla` so imports
   written before the rename keep working. Deprecated; no code lives there.
+- `showcase/` — the tablet exercised in full: the Tower Audit of *The Book
+  of Lies* carried from report to gated figures by both the CLI and the
+  Python API, the gate shown refusing on the record, with the full report
+  in `showcase/SHOWCASE-REPORT.md`.
 - `docs/` — `API.md` (reference), `DOCTRINE.md` (visual TRVVTH).
 - `tools/` — builders and utilities (logo builder documents the mark).
 - `assets/` — the logo: a thirteen-spoked data rose, gold on indigo.

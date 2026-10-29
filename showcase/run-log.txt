@@ -1,0 +1,8 @@
+ingested: 'The Tower Audit of The Book of Lies — Findings Report' — 6 sections, 4 tables, 1 figure refs
+
+--- the gate, shown refusing (these never reach the build) ---
+REFUSED sourceless.png: figure 1 (sourceless.png): no source — name where the numbers came from
+REFUSED mismatched.png: figure 1 (mismatched.png): data mismatch — 2 labels vs 1 values; the picture and the numbers must be the same list
+REFUSED posing.png: figure 1 (posing.png): no data and caption does not say schematic/illustrative — a drawing must not pose as a measurement
+
+wrote /home/hatch/workspace/tabvla/showcase/api-illustrated.pdf (5 figures, gate passed)

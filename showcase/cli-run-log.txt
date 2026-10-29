@@ -1,0 +1,2 @@
+skip table 4 (V. The Error Register in Brief): not fully numeric
+wrote showcase/cli-illustrated.pdf (4 figures)
