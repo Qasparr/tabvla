@@ -58,9 +58,20 @@ def _finish(fig, path, title):
 def bar_chart(labels, values, path, title="", reference_lines=None):
     """Bars at exactly values[i] for labels[i]. Zero-based axis.
 
-    MECHANISM: the y-axis starts at zero unless the caller passes
-    reference_lines AND documents the truncation in the caption —
-    the gate checks the caption for the disclosure (see provenance.py).
+    MECHANISM: the y-axis starts at zero, unconditionally — this builder
+    has no truncation path. reference_lines are drawn dashed at their
+    values and labeled; they neither move nor excuse the axis. The gate
+    (see provenance.py) checks source, caption, and data honesty; it
+    performs no truncation check, because there is no truncation to check.
+
+    CORRECTION (2026-10-29, at the Architect's order — marked, not
+    vanished): this docstring formerly claimed the axis starts at zero
+    "unless the caller passes reference_lines AND documents the
+    truncation in the caption — the gate checks the caption for the
+    disclosure." That mechanism never existed in the code: no truncation
+    path was implemented and the gate made no such check. The claim is
+    struck and replaced by the mechanism above, which is the one the
+    code has always actually run.
     reference_lines: [(value, label), ...] drawn dashed, e.g. bridges.
     """
     fig, ax = plt.subplots(figsize=(10, 5))
