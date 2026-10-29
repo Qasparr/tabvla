@@ -84,6 +84,12 @@ def line_chart(labels, values, path, title="", reference_lines=None):
     ax.set_xticks(range(len(labels)))
     ax.set_xticklabels(labels, rotation=35, ha="right", fontsize=9)
     ax.set_ylabel("value")
+    # DOCTRINE (ruling of 2026-10-29, under the Architect's pen-release):
+    # the axis starts at zero here too. The Doctrine's wider clause —
+    # no truncated axes without disclosure — is satisfied absolutely by
+    # not truncating. A line that floats above a hidden floor flatters
+    # its own variation exactly as a cut bar does.
+    ax.set_ylim(bottom=0)
     for val, lab in reference_lines or []:
         ax.axhline(val, color="gray", linestyle="--", linewidth=1)
         ax.text(len(labels) - 1, val, " %s" % lab, va="bottom", ha="right",
@@ -99,6 +105,9 @@ def scatter_chart(labels, values, path, title=""):
     ax.set_xticks(range(len(labels)))
     ax.set_xticklabels(labels, rotation=35, ha="right", fontsize=9)
     ax.set_ylabel("value")
+    # DOCTRINE: same ruling as line_chart (2026-10-29) — zero floor, so
+    # a point's height never exaggerates its distance from nothing.
+    ax.set_ylim(bottom=0)
     _finish(fig, path, title)
     return Figure(image_path=path, caption="", source="")
 
